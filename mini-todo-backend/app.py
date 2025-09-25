@@ -6,8 +6,11 @@ from flask_cors import CORS
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "database.db")
 
+init_db()
 app = Flask(__name__)
 CORS(app)
+# Ensure DB exists locally
+
 
 def get_conn():
     conn = sqlite3.connect(DB_PATH)
@@ -83,7 +86,6 @@ def update_task(task_id):
     return jsonify(task)
 
 if __name__ == "__main__":
-    # Ensure DB exists locally
-    init_db()
+    
     port = int(os.environ.get("PORT", "5000"))
     app.run(host="0.0.0.0", port=port, debug=True)

@@ -47,3 +47,21 @@ Backend (Render): https://your-backend.onrender.com/health
 ✅ Pros: 超轻量、结构清晰、覆盖完整技术栈、可快速演示
 
 ❌ Cons: SQLite 在 Render 免费实例上是临时存储（数据可能重置），不适合生产环境
+
+7. 文件结构
+
+minitodo/
+├─ README.md # 项目说明
+├─ backend/ # 后端 (Flask + SQLite)
+│ ├─ app.py
+│ ├─ requirements.txt
+│ ├─ Procfile
+│ ├─ database.db # SQLite 数据库
+│ └─ README.md
+│
+└─ frontend/ # 前端 (HTML/CSS/JS)
+├─ index.html
+├─ config.js
+├─ app.js
+├─ styles.css
+└─ README.md

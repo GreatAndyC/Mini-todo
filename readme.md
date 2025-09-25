@@ -65,8 +65,16 @@ minitodo/
    └─ README.md
 ```
 
-## 8.部署前端到Vercel
 
+
+## 8.部署后端到Render
+注意：根目录选择mini-todo-backend
+当本地代码更新并Push到Github时，render会自动重新部署代码
+
+## 8.部署前端到Vercel
+根目录选择mini-todo-frontend
+部署好后端后，将config.json里面的link改为Render提供的链接
+在后端没有释放的时候访问https://mini-todo-cyan.vercel.app/即可测试使用
 
 ## 10.本地测试
 在backend目录下

@@ -65,5 +65,24 @@ minitodo/
    └─ README.md
 ```
 
+## 8.部署前端到Vercel
+
+
+## 10.本地测试
+在backend目录下
+创建虚拟环境
+```
+python -m venv .venv
+```
+激活虚拟环境git bash
+```
+source .venv/Scripts/activate
+```
+安装依赖
+```
+pip install -r requirements.txt
+```
+
+
 
 

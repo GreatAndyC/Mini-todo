@@ -6,17 +6,6 @@ from flask_cors import CORS
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "database.db")
 
-init_db()
-app = Flask(__name__)
-CORS(app)
-# Ensure DB exists locally
-
-
-def get_conn():
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
-
 def init_db():
     with get_conn() as conn:
         conn.execute(
@@ -29,6 +18,17 @@ def init_db():
             """
         )
         conn.commit()
+
+def get_conn():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+app = Flask(__name__)
+CORS(app)
+# Ensure DB exists locally
+init_db()
+
 
 @app.route("/health", methods=["GET"])
 def health():
